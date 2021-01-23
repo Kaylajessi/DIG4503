@@ -9,31 +9,16 @@ speak()
 This function should use console.log() to show the person's name in their favorite color*/
 
 class Person {
-    constructor() {
-      this.name = "Kayla";
-      this.favoritecolor = "purple";
+
+    constructor(name, favoriteColor){
+      this.name = name;
+      this.favoriteColor = favoriteColor;
     }
   
     speak() {
-      console.log(name, favoritecolor);
+      console.log(this.name, this.favoriteColor);
     }
   }
 
-  const c = new Kayla();
+  export default Person;
 
-/*Create a class using your first name (for example, mine would be "Dan.js") with the following:
-Should extend the Person class
-Should use super() in its own constructor() to pass the arguments to what it is extending
-Should import the "Person.js" file.*/
-
-  class Kayla {
-
-    name = "Kayla";
-    favoritecolor = "purple";
-  
-    constructor(name, favoritecolor) {
-      this.name = "Kayla";
-      this.favoritecolor = "purple";
-    }
-  
-  }
