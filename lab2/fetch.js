@@ -14,7 +14,7 @@ class Fetch {
          .then((response)=> {
          const pokemonData = response.data;
 
-       console.logg(chalk.hex(this.color).bold("id " + pokemonData.id + " name " + pokemonData.name));
+       console.log(chalk.hex(this.color).bold("id " + pokemonData.id + " name " + pokemonData.name));
         }).catch(function (error){
         console.log(chalk.red("error!"));
 });
