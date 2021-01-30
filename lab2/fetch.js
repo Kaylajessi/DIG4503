@@ -13,8 +13,8 @@ class Fetch {
         axios.get('https://pokeapi.co/api/v2/pokemon/'+ this.pokemon)
          .then((response)=> {
          const pokemonData = response.data;
-         
-       console.log(chalk.hex(this.color).bold("id " + pokemonData.id + " name " + pokemonData.name));
+
+       console.logg(chalk.hex(this.color).bold("id " + pokemonData.id + " name " + pokemonData.name));
         }).catch(function (error){
         console.log(chalk.red("error!"));
 });
