@@ -1,10 +1,10 @@
-import './App.css';
-import HomePage from "./homePage.js";
+import HomePage from "./HomePage.js";
+import React from 'react';
 
-function Name() {
+function App() {
   return (
     <div className="App">
-      
+      <HomePage firstName="Kayla"></HomePage>
     </div>
   );
 }
