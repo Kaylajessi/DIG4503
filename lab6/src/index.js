@@ -14,5 +14,4 @@ App.get('/person', (request, response)=> {
 });
 
 App.listen(port, ()=>{
-    console.log("Kayla Purple!");
 });
