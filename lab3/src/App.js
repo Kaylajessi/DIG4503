@@ -1,10 +1,10 @@
-import HomePage from "./HomePage.js";
+import NamePicker from "./NamePicker.js";
 import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <HomePage firstName="Kayla"></HomePage>
+      <NamePicker></NamePicker>
     </div>
   );
 }
