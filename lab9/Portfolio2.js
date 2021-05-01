@@ -14,8 +14,6 @@ class Database{
         this.collection = database.collection('listingsAndReviews')})
     }
 
-//beds, price, bedrooms, name
-
     close(){
         this.server.close()
     }
