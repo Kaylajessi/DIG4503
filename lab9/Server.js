@@ -1,21 +1,44 @@
-import mongoDB from 'mongodb';
+import Database from "./Portfolio2.js";
+import express from "express";
+import cors from "cors"
 
-var client = mongoDB.MongoClient
-client.connect('mongodb+srv://KaylaRoberts:JBUU0R2ZbLMr519n@cluster0.yuzwq.mongodb.net', (error, server)=>{
-if (error){
-    console.log(error)
-    server.close()
-}
+const app = express();
+const PORT = 45030;
 
-var database = server.db('sample_airbnb')
-var collection = database.collection('listingsAndReviews')
-var cursor = collection.find({
-    "review_scores.review_scores_rating" : {$gte : 99}, 
-    "beds" : {$gte : 5},
-    "price" : {$lte : 200}
-})
-cursor.toArray().then((results)=>{
-    console.log(results)
-})
-server.close()
-})
+app.use(cors());
+  
+app.use(express.json());
+
+Database.connect()
+
+  App.put("/name/:name", (req, res) => {
+
+    const listing = Database.createOne(req.params.name, req.body.price, req.body.bedrooms, req.body.beds)
+    res.json(listing)
+    });
+
+  App.get("/name/:name", (req, res) => {
+  
+    const listing = Database.readOne(req.params.name)
+    res.json(listing)
+    });
+
+  App.post("/name/search", (req, res) => {
+  
+    const listing = Database.readMany(req.params.beds, req.params.price)
+    res.json(listing)
+    });
+
+  App.delete("/name/:name", (req, res) => {
+  
+    const listing = Database.deleteOne(req.params.name)
+    res.json(listing)
+    });
+    
+  App.listen(port, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      port,
+      port
+    );
+  });
